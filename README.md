@@ -1,6 +1,10 @@
 # Distribution of True Stellar Rotational Velocities
 
-This project contains code and data to analyze and visualize the distribution of true stellar rotational velocities (v) based on observed projected rotational velocities (v sin i).
+**Authors:**
+- (@jurados) **Steve Jurado** (*Main Contributor*), Universidad de Chile, Chile.
+- (@fancamil) **Fernanda Ancamil**, Universidad de Concepción, Chile.
+- (@czuloaga) **Camila Zuloaga**, Universidad Nacional de Córdoba, Argentina.
+- (@mijailmilicich) **Mijail Milicich**, Universidad Nacional de La Plata, Argentina.
 
 ## Introduction
 All the stars rotate around their own axis, and the measurement of their rotational velocity is essential to understand many stellar properties and phenomena. However, what we can directly observe is the projected rotational velocity ($v \sin i$), where '$i$' is the inclination angle between the star's rotation axis and the line of sight. 
@@ -11,7 +15,7 @@ All the stars rotate around their own axis, and the measurement of their rotatio
 
 The true rotational velocity ($v$) can be inferred from $v \sin i$, but this requires statistical methods due to complex observational techniques to measure the inclination angle.
 
-CHandrasekhar & Münch (1950) derived an integral equation that relates the distribution of true rotational velocities ($f_X(x)$) to the distribution of projected rotational velocities ($f_Y(y)$) under the assumption of an isotropic distribution of stellar rotation axes.
+Chandrasekhar & Münch (1950) derived an integral equation that relates the distribution of true rotational velocities ($f_X(x)$) to the distribution of projected rotational velocities ($f_Y(y)$) under the assumption of an isotropic distribution of stellar rotation axes.
 
 $$f_Y(y) = \int_y^{\infty} \frac{y}{x}\frac{1}{\sqrt{x^2-y^2}} f_X(x)\, dx$$
 
@@ -80,17 +84,45 @@ This method was first applied to field stars from the Geneva-Copenhagen survey (
 
 <center>
     Geneve-Copenhagen Survey Field Stars Results
-    <img src="results/rmse_vs_alpha_geneve.png" width="45%" />
-    <img src="results/true_velocity_distribution_geneve.png" width="45%" />
+    <img src="results/vsini_reconstruction_alphavalues_geneve.png", height=300/>
+    <img src="results/rmse_vs_alpha_geneve.png", height=300/>
+    <img src="results/true_velocity_distribution_geneve.png", height=300 />
 </center>
 
 After the same procedure was applied to stars in the open clusters Alpha Persei and Pleidaes, the best-fit value of $\alpha$. Obtained the next results:
 
+<center>
+    Alpha Persei star cluster Results
+    <img src="results/rmse_vs_alpha_AlphaPersei.png", height=300/>
+    <img src="results/true_velocity_distribution_AlphaPersei.png", height=300 />
+</center>
+
+<center>
+    Pleiades star cluster Results
+    <img src="results/rmse_vs_alpha_Pleiades.png", height=300/>
+    <img src="results/true_velocity_distribution_Pleiades.png", height=300 />
+</center>
+
+In summary we tabulate the best-fit $\alpha$ values for each dataset:
+
+| Star Cluster | $v\sin i$ Range (km/s) | Number of Stars | Best-fit $\alpha$ |
+|--------------|------------------------|-----------------|-------------------|
+| Field Stars (Geneva-Copenhagen Survey) | 0 - 30 | 11818 | 0.0 |
+| Alpha Persei | 3.6 - 66.1 | 57 | 0.16 |
+| Pleiades | 0.0 - 66.4 | 145 |  0.16 |
+| Coma Berenices | 0.0 - 35.1 | 64 | 0.29 |
+| Praesepe | 0.0 - 69.0 | 150 | 0.29 |
+| Hyades | 1.1 - 65.9 | 156 | 0.16 |    
 
 ## Conclusions
 - In the cases of Field Stars the value of $\alpha = 0$ was obtianed, indicating that the distribution of true rotational velocities is consistent with an isotropic distribution of stellar rotation axes. This result aligns with previous studies such as Chandrasekhar & Münch (1950).
 
 - In the case of Star Cluster members, a value of $\alpha \neq 0.5$ was obtained, suggesting a non-isotropic distribution of stellar rotation axes. This finding is consistent with the results reported by Corsaro E. et al. (2017) and Solar M. (2021), who found evidence of spin alignment in stars within old open clusters.
+
+## Future Work
+- Use the L-curve method or Generalized Cross-Validation (GCV) to select the optimal regularization parameter ($\lambda$) for Tikhonov regularization, instead of using a fixed value.
+- Use other kernel functions, symmetric and assymetric, to estimate the distribution of projected rotational velocities and compare the results with those obtained using the Gaussian kernel.
+- Use Monte Carlo simulations to assess the uncertainty in the estimated $\alpha$ values and the robustness of the deconvolution method.
 
 
 ## References
@@ -104,7 +136,4 @@ After the same procedure was applied to stars in the open clusters Alpha Persei 
 
 - Solar, M. (2021). Non-isotropic distributions of stellar rotational velocities [Tesis de magíster no publicada, Universidad de Valparaíso]. Repositorio Institucional UV. https://repositoriobibliotecas.uv.cl/items/7c463ec8-453b-42b3-ab49-9fd2b2961a6a/full
 
-
-
-
-
+**Update Date**: December 2025.
