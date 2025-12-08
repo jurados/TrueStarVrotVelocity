@@ -53,7 +53,7 @@ where $\mathbf{Y} \equiv f_Y(y;\alpha)$ is the vector of observed projected rota
 
 We propuse use a decolvolutional method using Tikhonov regularization to solve this ill-posed problem, also called Ridge regularization. Tikhonov regularization adds a penalty term to the solution, which helps stabilize the inversion process and reduces the impact of noise. The regularized solution can be expressed as:
 
-$$\mathbf{X}_{\text{reg}} = \arg\min_{\mathbf{X}} \left\{|| \mathbf{K} \cdot \mathbf{X} - \mathbf{Y} ||^2 + \lambda^2 || \mathbf{L} \cdot \mathbf{X} ||^2 \right\}$$
+$$\mathbf{X}_{\text{reg}} = \arg\min_{\mathbf{X}} \left (|| \mathbf{K} \cdot \mathbf{X} - \mathbf{Y} ||^2 + \lambda^2 || \mathbf{L} \cdot \mathbf{X} ||^2 \right)$$
 
 where $\lambda$ is the regularization parameter that controls the trade-off between fitting the data and smoothing the solution, and $\mathbf{L}$ is a regularization matrix (often chosen as the identity matrix or a derivative operator). The choice of $\lambda$ is crucial, as it determines the balance between fidelity to the observed data and the smoothness of the estimated distribution.
 
