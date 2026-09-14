@@ -15,7 +15,7 @@ All the stars rotate around their own axis, and the measurement of their rotatio
 
 The true rotational velocity ($v$) can be inferred from $v \sin i$, but this requires statistical methods due to complex observational techniques to measure the inclination angle.
 
-Chandrasekhar & Münch (1950) derived an integral equation that relates the distribution of true rotational velocities ($f_X(x)$) to the distribution of projected rotational velocities ($f_Y(y)$) under the assumption of an isotropic distribution of stellar rotation axes.
+Chandrasekhar & Münch (1950) derived an integral equation that relates the distribution of true rotational velocities ($f\_X(x)$) to the distribution of projected rotational velocities ($f\_Y(y)$) under the assumption of an isotropic distribution of stellar rotation axes.
 
 $$f_Y(y) = \int_y^{\infty} \frac{y}{x}\frac{1}{\sqrt{x^2-y^2}} f_X(x)\, dx$$
 
